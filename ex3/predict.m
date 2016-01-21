@@ -8,7 +8,7 @@ m = size(X, 1);
 num_labels = size(Theta2, 1);
 
 % You need to return the following variables correctly 
-p = zeros(size(X, 1), 1);
+p = zeros(m, 1);
 
 % ====================== YOUR CODE HERE ======================
 % Instructions: Complete the following code to make predictions using
@@ -21,14 +21,22 @@ p = zeros(size(X, 1), 1);
 %       can use max(A, [], 2) to obtain the max for each row.
 %
 
+%add the input layer bias
+X = [ones(m, 1) X];
 
+%input layer
+a1 = sigmoid(X * Theta1'); % m x 25
 
+%add the hidden layer bias
+a1 = [ones(m, 1) a1];
 
+%hidden layer
+a2 = sigmoid(a1 * Theta2'); % m x 10
 
+%output layer
+[~, indices] = max(a2, [], 2); % m x 1
 
-
-
-
+p = indices;
 % =========================================================================
 
 
