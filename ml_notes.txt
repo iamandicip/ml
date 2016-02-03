@@ -1,0 +1,48 @@
+Machine learning algorithms:
+	Linear regression
+	Logistic regression
+	Neural networks
+	SVM with linear kernel
+	SVM with Gaussian kernel
+	
+SVM parameters (C)
+Bias and variance trade off
+Must chose C
+C plays a role similar to 1/LAMBDA (where LAMBDA is the regularization parameter)
+Large C gives a hypothesis of low bias high variance --> overfitting
+Small C gives a hypothesis of high bias low variance --> underfitting
+SVM parameters (σ2)
+Parameter for calculating f values
+Large σ2 - f features vary more smoothly - higher bias, lower variance
+Small σ2 - f features vary abruptly - low bias, high variance
+
+Logistic regression vs. SVM
+When should you use SVM and when is logistic regression more applicable
+If n (features) is large vs. m (training set)
+e.g. text classification problem
+Feature vector dimension is 10 000
+Training set is 10 - 1000
+Then use logistic regression or SVM with a linear kernel
+If n is small and m is intermediate
+n = 1 - 1000
+m = 10 - 10 000
+Gaussian kernel is good
+If n is small and m is large
+n = 1 - 1000
+m = 50 000+
+SVM will be slow to run with Gaussian kernel
+In that case
+Manually create or add more features
+Use logistic regression of SVM with a linear kernel
+Logistic regression and SVM with a linear kernel are pretty similar
+Do similar things
+Get similar performance
+A lot of SVM's power is using diferent kernels to learn complex non-linear functions
+For all these regimes a well designed NN should work
+But, for some of these problems a NN might be slower - SVM well implemented would be faster
+SVM has a convex optimization problem - so you get a global minimum
+It's not always clear how to chose an algorithm
+Often more important to get enough data
+Designing new features
+Debugging the algorithm
+SVM is widely perceived a very powerful learning algorithm
