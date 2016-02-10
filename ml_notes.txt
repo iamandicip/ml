@@ -1,16 +1,16 @@
-Machine learning algorithms:
+Supervised learning algorithms:
 	Linear regression
 	Logistic regression
 	Neural networks
 	SVM with linear kernel
 	SVM with Gaussian kernel
-	
+
 SVM parameters (C)
 Bias and variance trade off
 Must chose C
 C plays a role similar to 1/LAMBDA (where LAMBDA is the regularization parameter)
 Large C gives a hypothesis of low bias high variance --> overfitting
-Small C gives a hypothesis of high bias low variance --> underfitting
+Small C gives a hypothesis of high bias low variance --> under-fitting
 SVM parameters (σ2)
 Parameter for calculating f values
 Large σ2 - f features vary more smoothly - higher bias, lower variance
@@ -37,7 +37,7 @@ Use logistic regression of SVM with a linear kernel
 Logistic regression and SVM with a linear kernel are pretty similar
 Do similar things
 Get similar performance
-A lot of SVM's power is using diferent kernels to learn complex non-linear functions
+A lot of SVM's power is using different kernels to learn complex non-linear functions
 For all these regimes a well designed NN should work
 But, for some of these problems a NN might be slower - SVM well implemented would be faster
 SVM has a convex optimization problem - so you get a global minimum
@@ -46,3 +46,23 @@ Often more important to get enough data
 Designing new features
 Debugging the algorithm
 SVM is widely perceived a very powerful learning algorithm
+
+
+Unsupervised learning algorithms
+	K-means -> clustering
+	PCA (Principal Component Analysis) - for dimensionality reduction and compression
+
+Always perform mean normalization and feature scaling for PCA
+PCA is not linear regression because:
+	in PCA the error is calculated as the sum of squares of the projections
+	in linear regression the error is calculated as the distance parallel with the axis
+	linear regression tries to predict the value of y
+	PCA tries to find other features -> a lower dimensional surface onto which to project x
+
+Use PCA only on the training set, not on the validation/test set!
+
+Don't use PCA to prevent overfitting!
+Because it doesn't take into account the values of y so it might throw away valuable data.
+For preventing overfitting, user regularization instead.
+
+Before implementing PCA, try training with original data.
