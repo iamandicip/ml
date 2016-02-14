@@ -21,15 +21,23 @@ idx = zeros(size(X,1), 1);
 % Note: You can use a for-loop over the examples to compute this.
 %
 for i = 1:size(X, 1)
+    xi = X(i, :);
+    
     distances = ones(1, K);
     for j = 1:K
-       distances(1, j) = norm(X(i, :) - centroids(j, :));
+       cj = centroids(j, :);
+       distances(1, j) = norm(xi - cj);
     end
     
-    [~, index] = min(distances);
-    idx(i, 1) = index;
+    [min, index] = min(distances);
     
 end
+
+%fprintf('idx=%f\n',idx);
+
+
+
+
 % =============================================================
 
 end
