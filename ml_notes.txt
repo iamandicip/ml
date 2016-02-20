@@ -47,6 +47,7 @@ Designing new features
 Debugging the algorithm
 SVM is widely perceived a very powerful learning algorithm
 
+——————————————————————————————————————————————————————————
 
 Unsupervised learning algorithms
 	K-means -> clustering
@@ -66,3 +67,39 @@ Because it doesn't take into account the values of y so it might throw away valu
 For preventing overfitting, user regularization instead.
 
 Before implementing PCA, try training with original data.
+
+——————————————————————————————————————————————————————————
+Anomaly detection vs supervised learning
+
+Anomaly detection
+- small number of positives examples vs large number of negative examples
+- many different types of anomalies -> hard to learn how all the anomalies look like
+- usages: fraud detection, manufacturing, monitoring machines, etc
+
+Supervised learning
+- large number of both positive and negative examples
+- enough positive examples to learn how they are like
+- spam classification, weather prediction, cancer classification
+
+You can apply different transformation to the features to make it look more gaussian:
+log(x), sqrt(x), log(x + c), x^(1/3), exp(x) etc
+
+——————————————————————————————————————————————————————————
+
+Multivariate Gaussian distribution when some of the features are correlated.
+It is a generalization of the original Gaussian distribution.
+If m < n or the features are redundant or liniarly dependent, the matrix inversion will fail
+
+When to apply Original Gaussian model vs Multivariate Gaussian model?
+
+Original Gaussian model
+- used more often
+- when the features are created manually
+- computationally cheaper for large number of features
+- works ok even for small number of training set
+
+Multivariate Gaussian model
+- when we want to automatically capture correlations between features
+- expensive to compute due to the inverse of Sigma nxn
+- must have m >> n (m > 10n)
+
