@@ -103,3 +103,8 @@ Multivariate Gaussian model
 - expensive to compute due to the inverse of Sigma nxn
 - must have m >> n (m > 10n)
 
+——————————————————————————————————————————————————————————
+
+Collaborative filtering
+
+
