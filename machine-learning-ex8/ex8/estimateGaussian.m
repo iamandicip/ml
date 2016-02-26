@@ -20,16 +20,18 @@ sigma2 = zeros(n, 1);
 %               the data for the i-th feature and sigma2(i)
 %               should contain variance of the i-th feature.
 %
+mu = ((1 / m) * sum(X))';
 
+%vectorized implementation
+%sigma2 = ((1 / m) * sum((bsxfun(@minus, X, mu')) .^2))';
 
+%loop implementation
+for i=1:n
+    sigma2(i) = (1 / m) * sum((X(:,i) - mu(i)) .^2);
+end
 
-
-
-
-
-
-
-
+%library implementation
+%sigma2 = var(X);
 % =============================================================
 
 
