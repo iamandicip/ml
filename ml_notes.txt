@@ -104,7 +104,38 @@ Multivariate Gaussian model
 - must have m >> n (m > 10n)
 
 ——————————————————————————————————————————————————————————
+Anomaly detection -> gaussian distribution
 
-Collaborative filtering
+Collaborative filtering - for recommender systems
+——————————————————————————————————————————————————————————
 
+Stochastic gradient descent - for very large data sets
+doesn’t converge to a minimum
+it is recommmended to shuffle the data before starting
 
+Stochastic gradient descent uses a single example at a time in each iteration
+Batch gradient descent uses all m examples in each iteration
+Mini-batch gradient descent uses b examples in each iteration	
+b in [2, 100]
+
+mini-batch can be faster than stochastic because of vectorization -> parralelization
+
+check for convergence by plotting the cost function every let’s say 1000 iterations
+if the cost function is increasing, maybe alpha is too big.
+
+usually, alpha is held constant
+
+to make stochastic gradient converge to the minimum, slowly decrease alpha every iteration
+alpha = c1 / (iterations + c2)
+
+——————————————————————————————————————————————————————————
+ 
+Online learning
+doesn’t store the training data, it just updates theta
+it can adapt to changing user preferences
+Recommending products to users
+
+——————————————————————————————————————————————————————————
+
+MapReduce - split the training set into multiple parts and send them to other machines/cores to do the partial sum calculation
+get the partial results from the machines and use them in the final calculation
