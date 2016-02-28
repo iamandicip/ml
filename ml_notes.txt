@@ -139,3 +139,11 @@ Recommending products to users
 
 MapReduce - split the training set into multiple parts and send them to other machines/cores to do the partial sum calculation
 get the partial results from the machines and use them in the final calculation
+
+——————————————————————————————————————————————————————————
+
+You can get more training data by generating artificial data synthesis or synthesize data by introducing distorsions.
+
+Apply ceiling analysis on deciding what part of the machine learning pipeline should be improved.
+
+
